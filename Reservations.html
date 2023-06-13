@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DDR Rent & car</title>
+        <link href="renee.css" rel="stylesheet" type="text/css"/>
+        <link href="footer.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script>
+            function confirmerSoumission() {
+                var confirmation = confirm("Etes-vous sur de vouloir reserver cette voiture ?");
+                if (confirmation) {
+                    // Le formulaire sera soumis ici
+                    // Ajoutez le code nécessaire pour soumettre le formulaire
+                    document.getElementById("monFormulaire").submit();
+                    afficherMessageConfirmation();
+                }
+            }
+
+            function afficherMessageConfirmation() {
+                var message = document.getElementById("messageConfirmation");
+                message.innerHTML = "Confirmation réussie avec succès !";
+                message.style.display = "block";
+            }
+        </script>
+        <style>
+            #messageConfirmation {
+                display: none;
+                color: green;
+                margin-top: 10px;
+            }
+            body {
+                background-image: url('Image/Range_2023_CO2_114-d.jpg.ximg.l_full_m.smart.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li>  <a href="#"><strong>DRR Rent & Car</a></strong>
+                </li>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="Vehicules.html">Véhicules</a></li>
+                <li><a href="Reservations.html">Réservation</a></li>
+                <li><a href="Loisirs.html">Loisirs</a></li>
+                <li><a href="Rechercher.html">Rechercher par Modèle</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <style>
+            h1 {
+                color: orange;
+            }
+            label {
+                color: orange;
+                font-weight: bold;
+            }
+            .form-group {
+                margin-bottom: 10px;
+            }
+
+            label {
+                display: block;
+                font-weight: bold;
+            }
+
+            input {
+                display: block;
+                width: 50%;
+                padding: 5px;
+            }
+            select {
+                display: block;
+                width: 50%;
+                padding: 5px;
+            }
+            .bouton:hover{
+                background-color: orange;
+            }
+        </style>
+
+    <center>
+        <h1> Location/Reservation de vehicule</h1>
+        <form>
+            <div>
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required> <br><br>
+            </div>
+            <div>
+                <label for="nom">Prénom :</label>
+                <input type="text" id="nom" name="prenom" required> <br><br>
+            </div>
+            <div>
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required> <br><br>
+            </div>
+            <div>
+                <label for="email">adresse :</label>
+                <input type="text" id="email" name="adresse" required> <br><br>
+            </div>
+            <div>
+                <label for="telephone">Téléphone :</label>
+                <input type="tel" id="telephone" name="telephone" required> <br><br>
+            </div>
+            <div>
+                <label for="vehicule">Véhicule :</label>
+                <select id="vehicule" name="vehicule" required>
+                    <option value="">Sélectionner un véhicule</option>
+                    <option value="vehicule1">Nissan</option>
+                    <option value="vehicule2">Toyota</option>
+                    <option value="vehicule3">Peugot</option> 
+                    <!-- Ajouter d'autres options de véhicules -->
+                </select>
+            </div>
+            <div><br><br>
+                <label for="date_debut">Date de début :</label>
+                <input type="date" id="date_debut" name="date_debut" required> <br><br>
+            </div>
+            <div>
+                <label for="date_fin">Date de fin :</label>
+                <input type="date" id="date_fin" name="date_fin" required> <br><br>
+            </div>
+            <div class="bouton">
+                <input type="submit" value="Reserver"  onclick="confirmerSoumission()"> <br><br>
+            </div>
+        </form>
+        <div id="messageConfirmation"></div>
+    </center>
+
+
+
+    <footer>
+
+        <div class="footer-content lower-footer">
+            <p> <br>Haiti</p>
+        </div>
+        <div class="footer-content lower-footer">
+            <ul class="lower-left-footer">
+                <li>
+                    <a href=" ">A propos</a>
+                </li>
+            </ul>
+            <center> <p>Tous droits réservés &copy; 2023 Location de Voitures DDR</p> </center>
+            <ul class="lower-right-footer">
+                <li>
+                    <a href=" "><span>Confidentialité</a></span>
+                </li>
+                <li>
+                    <a href=" ">Conditions</a>
+                </li>
+                <li>
+                    <a  href=" ">Paramètres </a>
+                </li>
+            </ul>
+
+
+        </div>
+
+
+    </footer>
+
+</body>
+</html>

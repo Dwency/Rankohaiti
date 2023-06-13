@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulaire de contact</title>
+  <link href="renee.css" rel="stylesheet" type="text/css"/>
+  <style>
+    form {
+      width: 400px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 5px;
+      margin-top: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+        
+    
+    <nav class="navbar">
+  <ul class="navbar-list">
+      <li>  <a href="#"><strong>DRR Rent & Car</a></strong>
+   </li>
+      <li><a href="index.html">Accueil</a></li>
+    <li><a href="Vehicules.html">Véhicules</a></li>
+    <li><a href="Reservations.html">Réservation</a></li>
+     <li><a href="Loisirs.html">Loisirs</a></li>
+      <li><a href="Rechercher.html">Rechercher par Modèle</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+  </ul>
+</nav>
+    <br><br>
+  <form>
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" required>
+
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Message :</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <button type="submit">Envoyer</button>
+  </form>
+</body>
+</html>

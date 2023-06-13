@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+      <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DDR Rent & car</title>
+        <link href="renee.css" rel="stylesheet" type="text/css"/>
+        <link href="footer.css" rel="stylesheet" type="text/css"/>
+    </head>
+    
+    <body>
+         <style>
+            h1{
+                color: orange;
+            }
+        </style>
+        <nav class="navbar">
+  <ul class="navbar-list">
+      <li>  <a href="#"><strong>DRR Rent & Car</a></strong>
+   </li>
+      <li><a href="index.html">Accueil</a></li>
+    <li><a href="Vehicules.html">Véhicules</a></li>
+    <li><a href="Reservations.html">Réservation</a></li>
+     <li><a href="Loisirs.html">Loisirs</a></li>
+     <li><a href="Rechercher.html">Rechercher par Modèle</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+  </ul>
+</nav>
+   <h1>Recherche de véhicule</h1>
+
+    <form id="search-form">
+      <label for="model">Modèle du véhicule :</label>
+      <select id="model">
+        <option value="">Selectionnez un modèle</option>
+        <option value="vehicule1">Toyota</option>
+        <option value="vehicule2">Nissan</option>
+        <option value="vehicule3">Peugot</option>
+        <!-- Ajoutez ici d'autres options pour les différents modèles de véhicules -->
+      </select>
+      <button type="button" onclick="search()">Rechercher</button>
+    </form>
+    <table id="vehicle-table">
+      <thead>
+        <tr>
+      
+          <th>Image</th>
+         
+        </tr>
+      </thead>
+      <a href="Rechercher.html"></a>
+      <tbody id="vehicle-data">
+        <!-- Ici, les données des véhicules recherchés seront insérées dynamiquement par JavaScript -->
+      </tbody>
+    </table>
+   
+    <script>
+      function search() {
+        var selectedModel = document.getElementById("model").value;
+        var vehicleData = getVehicleData(selectedModel);
+  
+        if (vehicleData) {
+          var tableBody = document.getElementById("vehicle-data");
+          tableBody.innerHTML = "";
+  
+          vehicleData.forEach(function (vehicle) {
+            var row = document.createElement("tr");
+  
+            var imageCell = document.createElement("td");
+            var image = document.createElement("img");
+            image.src = vehicle.image;
+            imageCell.appendChild(image);
+            row.appendChild(imageCell);
+  
+            var colorCell = document.createElement("td");
+            colorCell.textContent = vehicle.color;
+            row.appendChild(colorCell);
+  
+            var priceCell = document.createElement("td");
+            priceCell.textContent = vehicle.price;
+            row.appendChild(priceCell);
+  
+            var yearCell = document.createElement("td");
+            yearCell.textContent = vehicle.year;
+            row.appendChild(yearCell);
+  
+            tableBody.appendChild(row);
+          });
+        }
+      }
+  
+      function getVehicleData(model) {
+        
+        var vehicleData = {
+          vehicule1: [
+            {
+              image: "Image/1 (1).jpg", 
+              Prix : "$150/Jour",
+              
+            },
+            {
+              image: "Image/Toyo.jpg",
+              Prix : "$200/Jour",
+            },
+            {
+              image: "Image/toy.jpg",
+              Prix : "$100/Jour",
+              
+            }
+          ],
+          vehicule2: [
+            {
+              image: "Nissan _Ariya_HP_Logo_D_T.png.ximg.l_full_m.smart.png",
+              
+            },
+             {
+              image: "Image/Range_2023_CO2_114-d.jpg.ximg.l_full_m.smart.jpg",
+              
+            },
+             {
+              image: "Image/Master_Homepage_hero_epower_119.jpg.ximg.l_full_m.smart.jpg",
+             
+            },
+            {
+              image: "Image/NP300Frontier - Side View - 3000x1160.png.ximg.l_4_m.smart.png",
+             
+            },
+            {
+              image: "Image/Qashqai.jpg.ximg.l_4_m.smart.jpg",
+             
+            },
+             {
+              image: "Image/X-Trail3 - Side View - 3000x1160.png.ximg.l_4_m.smart.png",
+             
+            }
+            
+          ],
+          vehicule3: [
+            {
+              image: "Image/E-308_FE_HOME_D_4COLONNES_632x480.png",
+             
+            },
+            {
+              image: "Image/PEUGEOT_e208_800x600.png",
+              
+            },
+            {
+              image: "Image/PEUGEOT_308_PHEV_800x600.png",
+              
+            },
+            {
+              image: "Image/PEUGEOT_e2008.png",
+              
+            }
+          ]
+        };
+  
+        return vehicleData[model];
+      }
+    </script>
+
+    <div id="results"></div>
+      
+  </body>
+</html>
+    
